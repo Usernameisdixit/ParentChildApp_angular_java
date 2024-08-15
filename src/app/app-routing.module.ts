@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategoryListComponent } from './components/category-list/category-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+
+{path:'categories',component:CategoryListComponent},
+{path:'',redirectTo:'/categories',pathMatch:'full'}
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,11 @@
+<div *ngFor="let category of categories">
+    <div>
+      <span>{{ category.name }}</span>
+      
+      <button *ngIf="!category.childrenLoaded" (click)="toggleChildren(category)">+</button>
+    <button *ngIf="category.childrenLoaded" (click)="toggleChildren(category)">-</button>
+   
+      <app-child-component *ngIf="category.children && category.children.length > 0" [categories]="category.children"></app-child-component>
+    
+  </div>
+  
